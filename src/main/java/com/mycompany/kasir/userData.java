@@ -44,6 +44,7 @@ public class userData extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(854, 480));
         setPreferredSize(new java.awt.Dimension(854, 480));
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 

@@ -22,6 +22,8 @@ public class koneksi {
         } catch (SQLException e) {
             System.err.println("Koneksi Gagal!\n"+
                     e.getMessage());
+            Logging.log("Koneksi Gagal");
+            Logging.logException(e);
         }
         return null;
     }

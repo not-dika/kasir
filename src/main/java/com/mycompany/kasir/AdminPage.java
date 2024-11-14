@@ -21,10 +21,7 @@ public class AdminPage extends javax.swing.JFrame {
     Profile p;
     static DefaultTableModel m;
     static DefaultTableModel h;
-    /**
-     * Creates new form AdminPage
-     * @param P
-     */
+    
     public AdminPage(){
         initComponents();
         
@@ -88,6 +85,7 @@ public class AdminPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(854, 480));
         setPreferredSize(new java.awt.Dimension(854, 480));
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -146,7 +144,6 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -196,7 +193,6 @@ public class AdminPage extends javax.swing.JFrame {
 
         jTextField2.setBackground(new java.awt.Color(51, 51, 51));
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -247,7 +243,6 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
 
         jTable2.setBackground(new java.awt.Color(204, 204, 204));
-        jTable2.setForeground(new java.awt.Color(0, 0, 0));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -297,7 +292,6 @@ public class AdminPage extends javax.swing.JFrame {
 
         jTextField3.setBackground(new java.awt.Color(51, 51, 51));
         jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 2, true));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -459,6 +453,8 @@ public class AdminPage extends javax.swing.JFrame {
                     viewDataUser(""); 
                     JOptionPane.showMessageDialog(this, "Data "+ username +" telah terhapus");
                 } catch (SQLException e) {
+                    Logging.logException(e);
+                    JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AP-457]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             
@@ -529,6 +525,8 @@ public class AdminPage extends javax.swing.JFrame {
                     viewDataProduk(""); 
                     JOptionPane.showMessageDialog(this, "Data "+kode+" telah terhapus");
                 } catch (SQLException e) {
+                    Logging.logException(e);
+                    JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AP-529]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             
@@ -652,6 +650,7 @@ public class AdminPage extends javax.swing.JFrame {
                 no++;
             }
         } catch (Exception e) {
+            Logging.logException(e);
         }
     }
 
@@ -714,6 +713,7 @@ public class AdminPage extends javax.swing.JFrame {
                 no++;
             }
         } catch (Exception e) {
+            Logging.logException(e);
         }
     }
 }

@@ -359,6 +359,7 @@ public class addProduk extends java.awt.Dialog {
             this.setVisible(false);
             this.dispose();
         } catch (NumberFormatException | SQLException e) {
+            Logging.logException(e);
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AP-384]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_txtSimpanActionPerformed
@@ -448,6 +449,8 @@ public class addProduk extends java.awt.Dialog {
                 jComboBox1.addItem(id+" - "+name);
             } 
         } catch (SQLException e) {
+            Logging.logException(e);
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AP-452]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -464,6 +467,8 @@ public class addProduk extends java.awt.Dialog {
                 jComboBox2.addItem(id+" - "+name);
             } 
         } catch (Exception e) {
+            Logging.logException(e);
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AP-470]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     

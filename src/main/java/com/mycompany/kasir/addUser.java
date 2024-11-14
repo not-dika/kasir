@@ -185,6 +185,7 @@ public class addUser extends java.awt.Dialog {
             setVisible(false);
             dispose();
         } catch (Exception e) {
+            Logging.logException(e);
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [AU-188]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_butSimpanActionPerformed

@@ -39,6 +39,7 @@ public class login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 51, 51));
         setMinimumSize(new java.awt.Dimension(854, 480));
         setPreferredSize(new java.awt.Dimension(854, 480));
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(33, 33, 33));
         jPanel1.setMinimumSize(new java.awt.Dimension(854, 480));
@@ -232,7 +233,8 @@ public class login extends javax.swing.JFrame {
                 jTextField1.requestFocus();
             }
         }catch(HeadlessException | SQLException e) {
-            System.err.println(e.getMessage());
+            Logging.logException(e);
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [LO-237]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

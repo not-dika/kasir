@@ -170,6 +170,7 @@ public class Ubahdata extends javax.swing.JDialog {
             setVisible(false);
             dispose();
         } catch (HeadlessException | SQLException e) {
+            Logging.logException(e);
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [UD-173]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
         

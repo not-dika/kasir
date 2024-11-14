@@ -461,6 +461,7 @@ public class editProduk extends java.awt.Dialog {
             this.setVisible(false);
             this.dispose();
         } catch (NumberFormatException | SQLException e) {
+            Logging.logException(e);
             JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [EP-463]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_txtSimpanActionPerformed
@@ -570,6 +571,8 @@ public class editProduk extends java.awt.Dialog {
                 jComboBox1.addItem(id+" - "+name);
             } 
         } catch (SQLException e) {
+            Logging.logException(e);
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [EP-574]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -586,6 +589,8 @@ public class editProduk extends java.awt.Dialog {
                 jComboBox2.addItem(id+" - "+name);
             } 
         } catch (Exception e) {
+            Logging.logException(e);
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [UD-173]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
